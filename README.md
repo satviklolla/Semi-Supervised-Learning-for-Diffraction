@@ -1,1 +1,2 @@
-# A-Semi-Supervised-Deep-Learning-Approach-for-Automatic-Crystal-Differentiation
+# semi-supervised
+Here, we explore the use of semi-supervised learning techniques to scattering methodologies
