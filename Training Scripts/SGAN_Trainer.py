@@ -83,11 +83,10 @@ def train(gpu, epochs, world_size, batch_size, dset, data_dim=3041):
     generator = DDP(generator, device_ids=[gpu])
     discriminator = DDP(discriminator, device_ids=[gpu], find_unused_parameters = True)
     supervised_dataset=torch.load("path to supervised data")
-    unsup_dataset=torch.load("path to unsupervised data")
+    unsup_dataset=torch.load("path to unsupervised data", unsupervised=True)
     if gpu==0:
-        test_dataset=torch.load("path to testing data")
-        test_dataset=DiffractionDataset(test_dataset["X"]+1e-3, test_dataset["Y"], False)
-        print(dset)
+        test_dataset=DiffractionDataset("path to testing data")
+        
     supervised_dataset=DiffractionDataset(supervised_dataset["X"]+1e-3, supervised_dataset["Y"], False)
     unsup_dataset=DiffractionDataset(unsup_dataset["X"]+1e-3)
     

@@ -1,15 +1,10 @@
+#Credit to Haotong Liang (AuroraLHT)
+
 import torch.nn as nn
-#from Discriminator_LeNet import CNN1dlayer, CNN1dlayerNoAct
-
 from torch.nn import MSELoss, CrossEntropyLoss
-
 from transformers.configuration_utils import PretrainedConfig
 from transformers.modeling_utils import PreTrainedModel
-
-from transformers.modeling_outputs import (
-    SequenceClassifierOutput,
-    ModelOutput
-)
+from transformers.modeling_outputs import SequenceClassifierOutput
 
 class CNN1dlayer(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, stride, dropout_p=0.1, bias=False, padding=0):
